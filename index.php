@@ -1,8 +1,9 @@
 <?php
 require_once('./db/DB_connection.php');
 require_once('./db/DB_login.php');
-?>
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,21 +20,18 @@ require_once('./db/DB_login.php');
         <form method="POST">
             <?php if (isset($error_message)) : ?>
                 <div class="error-message"><?php echo $error_message; ?></div>
-                <?php endif; ?>
-                <div>
-                    <label for="username">Username</label>
-                    <input id="username" name="username" type="text" placeholer="username" required>
-                </div>
-                <div>
+            <?php endif; ?>
+            <div>
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" placeholder="username" required>
+            </div>
+            <div>
                 <label for="pasword">Password</label>
-                    <input id="password" name="password" type="password" placeholer="**************" required>
-                </div>
-                <div>
-                    <button type="submit">Sign in</button>
-                </div>
-                <div class="text-center mt-4">
-                    <p>Don't have an account? <a href="./pages/register.php">Register Here</a></p>
-                </div>
+                <input id="password" name="password" type="password" placeholder="**************" required>
+            </div>
+            <div>
+                <button type="submit">Sign in</button>
+            </div>
         </form>
     </div>
 </body>

@@ -7,6 +7,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
+
+
 $query = "SELECT * FROM products";
 $result = $conn->query($query);
 ?>

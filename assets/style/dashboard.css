@@ -69,6 +69,19 @@ body {
     margin-bottom: 20px;
 }
 
+    .home {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-columns: minmax(180px, auto);
+
+        .chartContainer {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px;
+    }
+    }
+
 /* Footer Styles */
 .btn-logout {
     display: block;
