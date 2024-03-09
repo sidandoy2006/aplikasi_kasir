@@ -1,25 +1,12 @@
 <?php
 session_start();
-require_once('../../db/DB_connection.php');
+include '../../layout/navbar.php';
 // if ($_SESSION["role"] != "boss") {
 // 	echo "<script>
 // 		alert('perhatian anda tidak punya akses');
 // 		</script>";
 // 	exit;
 // }
-
-
-// Fungsi untuk mengecek apakah pengguna memiliki akses tertentu berdasarkan peran
-function checkPermission($allowedRoles) {
-    // Pastikan session telah dimulai
-    if (!isset($_SESSION['loggedin'])) {
-        header('location: ../index.php');
-        exit;
-    }
-
-    }
-
-checkPermission(['boss']); // Hanya izinkan peran "boss" untuk mengakses halaman ini
 ?>
 
 <!DOCTYPE html>
