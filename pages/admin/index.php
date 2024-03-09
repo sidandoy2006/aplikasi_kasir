@@ -8,9 +8,10 @@ include_once '../../db/db_connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['tambah'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $nama = $_POST['nama'];
     $role = $_POST['role'];
     
-    $query = "INSERT INTO users (username, password, role) VALUES ('$username', '$password', '$role')";
+    $query = "INSERT INTO users (username, password, nama, role) VALUES ('$username', '$password', '$nama', '$role')";
     $result = mysqli_query($conn, $query);
     if ($result) {
         header("Location: $_SERVER[PHP_SELF]");
@@ -25,9 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])) {
     $id = $_POST['ID'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $nama = $_POST['nama'];
     $role = $_POST['role'];
     
-    $query = "UPDATE users SET username='$username', password='$password', role='$role' WHERE ID='$id'";
+    $query = "UPDATE users SET username='$username', password='$password', nama='$nama', role='$role' WHERE ID='$id'";
     $result = mysqli_query($conn, $query);
     if ($result) {
         header("Location: $_SERVER[PHP_SELF]");
@@ -62,14 +64,16 @@ while ($row = mysqli_fetch_assoc($result)) {
 // Data untuk mode edit
 $edit_username = '';
 $edit_password = '';
+$edit_nama = '';
 $edit_role = '';
-if (isset($_GET['ID'])) {
-    $id = $_GET['ID'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
     $query = "SELECT * FROM users WHERE ID='$id'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $edit_username = $row['username'];
     $edit_password = $row['password'];
+    $edit_nama = $row['nama'];
     $edit_role = $row['role'];
 }
 ?>
@@ -176,7 +180,7 @@ if (isset($_GET['ID'])) {
 </head>
 <body>
     <div class="container-fluid">
-        <div class="sidebar">
+    <div class="sidebar">
             <div class="sidebar-header">
                 <h3>Dashboard</h3>
             </div>
@@ -203,9 +207,9 @@ if (isset($_GET['ID'])) {
         <div class="content">
             <div class="container">
                 <div class="form-container">
-                    <h2 class="mb-4"><?php echo isset($_GET['ID']) ? 'Edit Akun' : 'Tambah Akun'; ?></h2>
+                    <h2 class="mb-4"><?php echo isset($_GET['id']) ? 'Edit Akun' : 'Tambah Akun'; ?></h2>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                        <?php if (isset($_GET['ID'])) : ?>
+                        <?php if (isset($_GET['id'])) : ?>
                             <input type="hidden" name="ID" value="<?php echo $id; ?>">
                         <?php endif; ?>
                         <div class="mb-3">
@@ -215,6 +219,10 @@ if (isset($_GET['ID'])) {
                         <div class="mb-3">
                             <label for="password" class="form-label">Password:</label>
                             <input type="password" name="password" class="form-control" value="<?php echo $edit_password; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama:</label>
+                            <input type="text" name="nama" class="form-control" value="<?php echo $edit_nama; ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="role" class="form-label">Role:</label>
@@ -240,6 +248,7 @@ if (isset($_GET['ID'])) {
                             <tr>
                                 <th scope="col">Username</th>
                                 <th scope="col">Password</th>
+                                <th scope="col">Nama</th>
                                 <th scope="col">Role</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -249,6 +258,7 @@ if (isset($_GET['ID'])) {
                                 <tr>
                                     <td><?php echo $row['username']; ?></td>
                                     <td><?php echo $row['password']; ?></td>
+                                    <td><?php echo $row['nama']; ?></td>
                                     <td><?php echo $row['role']; ?></td>
                                     <td>
                                         <a href="<?php echo $_SERVER['PHP_SELF'] . '?id=' . $row['ID']; ?>" class="btn btn-sm btn-primary">Edit</a>
@@ -275,9 +285,10 @@ if (isset($_GET['ID'])) {
             tableRows.forEach(row => {
                 const username = row.cells[0].textContent.trim().toLowerCase();
                 const password = row.cells[1].textContent.trim().toLowerCase();
-                const role = row.cells[2].textContent.trim().toLowerCase();
+                const nama = row.cells[2].textContent.trim().toLowerCase();
+                const role = row.cells[3].textContent.trim().toLowerCase();
 
-                if (username.includes(searchTerm) || password.includes(searchTerm) || role.includes(searchTerm)) {
+                if (username.includes(searchTerm) || password.includes(searchTerm) || nama.includes(searchTerm) || role.includes(searchTerm)) {
                     row.style.display = '';
                 } else {
                     row.style.display = 'none';

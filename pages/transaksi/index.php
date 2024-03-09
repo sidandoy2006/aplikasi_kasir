@@ -109,8 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cetak'])) {
         $uang = $_POST['uang'];
         $kembalian_transaksi = $_POST['kembalian'];
 
-        // Memasukkan informasi transaksi ke dalam tabel 'transaksi'
-        $query_transaksi = "INSERT INTO transaksi (uang_pelanggan, kembalian, total_harga) VALUES ($uang, $kembalian_transaksi, $totalHarga)";
+        // Memasukkan informasi transaksi ke dalam tabel 'transaksi' dan menyimpan username
+        $username = $_SESSION['username'];
+        $query_transaksi = "INSERT INTO transaksi (uang_pelanggan, kembalian, total_harga, username) VALUES ($uang, $kembalian_transaksi, $totalHarga, '$username')";
         $result_transaksi = mysqli_query($conn, $query_transaksi);
         if (!$result_transaksi) {
             $error = 'Gagal menyimpan transaksi!';
