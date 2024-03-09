@@ -17,7 +17,7 @@ $realName = $_SESSION['nama'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard Kasir Pak Kusir</title>
+    <title>Dashboard Kasir Pak Kusir</title>
     <link rel="stylesheet" href="../assets/style/dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -80,36 +80,11 @@ $realName = $_SESSION['nama'];
         .logout-link:hover {
             color: #f8d7da !important;
         }
-        .btn-tambah-kasir {
-            background-color: #28a745;
-            border-color: #28a745;
-        }
-        .btn-tambah-kasir:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
-        .btn-edit-kasir {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-        .btn-edit-kasir:hover {
-            background-color: #0069d9;
-            border-color: #0062cc;
-        }
-        .btn-batal-edit-kasir {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        .btn-batal-edit-kasir:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
         .mb-4 {
-    background-color: orangered;
-    color: #fff;
-    padding: 10px;
-}
-
+            background-color: orangered;
+            color: #fff;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -138,7 +113,7 @@ $realName = $_SESSION['nama'];
             </li>
         </ul>
     </div>
-    <div class="container mt-4">
+    <div class="container mt-4" style="margin-left: 250px;">
         <h1>Hello, <?php echo htmlspecialchars($realName); ?>! Welcome to the dashboard</h1>
         <div class="dashboard-content">
             <h2>Dashboard</h2>
@@ -150,21 +125,3 @@ $realName = $_SESSION['nama'];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Kasir Pak Kusir</title>
-    
-    <link rel="stylesheet" href="../assets/style/dashboard.css">
-</head>
-<body>
-    
-
-    
-</body>
-</html>
-
-
