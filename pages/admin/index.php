@@ -191,7 +191,7 @@ if (isset($_GET['ID'])) {
                     <a class="nav-link" href="../transaksi/">Transaksi</a>
                 </li>
                 <li class="nav-item <?php echo ($role === 'admin') ? '' : 'd-none'; ?>">
-                    <a class="nav-link" href="../product/">Data Produk</a>
+                <a class="nav-link" href="../kasir/manage_product.php">Data Produk</a>
                 </li>
             </ul>
             <ul class="nav flex-column mt-auto">
