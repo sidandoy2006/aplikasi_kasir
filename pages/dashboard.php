@@ -120,16 +120,16 @@ $realName = $_SESSION['nama'];
         </div>
         <ul class="nav flex-column">
             <li class="nav-item <?php echo ($role === 'admin') ? '' : 'd-none'; ?>">
-                <a class="nav-link" href="index.php">Kelola Akun</a>
+                <a class="nav-link" href="pages/admin">Kelola Akun</a>
             </li>
             <li class="nav-item <?php echo ($role === 'admin' || $role === 'owner') ? '' : 'd-none'; ?>">
-                <a class="nav-link" href="../activity/log_activity.php">Log Activity</a>
+                <a class="nav-link" href="activity/log_activity.php">Log Activity</a>
             </li>
             <li class="nav-item <?php echo ($role === 'admin' || $role === 'kasir') ? '' : 'd-none'; ?>">
-                <a class="nav-link" href="../transaksi/">Transaksi</a>
+                <a class="nav-link" href="transaksi/">Transaksi</a>
             </li>
             <li class="nav-item <?php echo ($role === 'admin') ? '' : 'd-none'; ?>">
-                <a class="nav-link" href="../product/">Data Produk</a>
+                <a class="nav-link" href="kasir/manage_product.php">Data Produk</a>
             </li>
         </ul>
         <ul class="nav flex-column mt-auto">
