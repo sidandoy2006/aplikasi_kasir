@@ -120,7 +120,7 @@ $realName = $_SESSION['nama'];
         </div>
         <ul class="nav flex-column">
             <li class="nav-item <?php echo ($role === 'admin') ? '' : 'd-none'; ?>">
-                <a class="nav-link" href="pages/admin">Kelola Akun</a>
+                <a class="nav-link" href="admin">Kelola Akun</a>
             </li>
             <li class="nav-item <?php echo ($role === 'admin' || $role === 'owner') ? '' : 'd-none'; ?>">
                 <a class="nav-link" href="activity/log_activity.php">Log Activity</a>
