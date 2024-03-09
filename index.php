@@ -49,11 +49,11 @@ $conn->close();
             <?php endif; ?>
             <div>
                 <label for="username">Username</label>
-                <input id="username" name="username" type="text" placeholder="username" required>
+                <input id="username" name="username" type="text" placeholder="Isi Username" required>
             </div>
             <div>
                 <label for="pasword">Password</label>
-                <input id="password" name="password" type="password" placeholder="**************" required>
+                <input id="password" name="password" type="password" placeholder="Isi Password" required>
             </div>
             <div>
                 <button type="submit">Sign in</button>
