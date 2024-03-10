@@ -162,7 +162,7 @@ if ($result) {
                         Cetak Log Aktivitas
                     </a>
                 </div>
-                <form method="GET">
+                <form method="GET" action="">
                     <div class="row mb-3">
                         <div class="col-md-3">
                             <input type="date" class="form-control" name="start_date" value="<?php echo $start_date; ?>">
