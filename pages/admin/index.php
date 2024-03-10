@@ -200,7 +200,7 @@ if (isset($_GET['id'])) {
             </ul>
             <ul class="nav flex-column mt-auto">
                 <li class="nav-item">
-                    <a class="nav-link logout-link" href="../../auth/logout.php">Keluar</a>
+                    <a class="nav-link logout-link" href="../../db/db_logout.php">Keluar</a>
                 </li>
             </ul>
         </div>
